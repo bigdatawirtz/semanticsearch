@@ -6,6 +6,7 @@ A lightweight web application for semantic search over JSON documents using Chro
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![Gradio](https://img.shields.io/badge/Gradio-Interface-orange)
+![Docker](https://img.shields.io/badge/Docker-Enabled-blue)
 ![ChromaDB](https://img.shields.io/badge/ChromaDB-Vector_DB-green)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 </div>
