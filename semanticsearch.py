@@ -3,6 +3,7 @@ import gradio as gr
 import chromadb
 from chromadb.utils import embedding_functions
 import json
+import requests
 
 # -----------------------------
 # 1. Initialize ChromaDB
@@ -105,9 +106,56 @@ def ask_question(question):
 
     return f"📄 **Best matching document** (from: {metadata.get('filename')})\n\n```\n{best_doc}\n```"
 
+
+
+# -----------------------------
+# 4. Ollama request function
+# -----------------------------
+
+
+def ask_ollama(question):
+    # Step 1: Find the most relevant document from Chroma
+    results = collection.query(query_texts=[question], n_results=1)
+    if not results["documents"]:
+        return "No documents found to use as context."
+
+    best_doc = results["documents"][0][0]
+    filename = results["metadatas"][0][0].get("filename")
+
+    # Step 2: Build the prompt
+    prompt = f"""
+You are an assistant. Use the following document as context.
+
+=== DOCUMENT ({filename}) ===
+{best_doc}
+=== END DOCUMENT ===
+
+User question: {question}
+
+Provide a clear and helpful answer based ONLY on the document.
+"""
+
+    # Step 3: Send to Ollama
+    response = requests.post(
+        "http://localhost:11434/api/generate",
+        json={
+            "model": "llama3.3",        # Change to your Ollama model name
+            "prompt": prompt,
+            "stream": False
+        }
+    )
+
+    if response.status_code != 200:
+        return f"Error calling Ollama: {response.text}"
+
+    return response.json()["response"]
+
+
+
 # -----------------------------
 # 4. Gradio Interface
 # -----------------------------
+
 with gr.Blocks(title="ChromaDB Text Search") as demo:
 
     gr.Markdown("# 📚 ChromaDB Semantic Text Search App")
@@ -121,8 +169,13 @@ with gr.Blocks(title="ChromaDB Text Search") as demo:
 
     with gr.Tab("Search"):
         question_box = gr.Textbox(label="Ask a question")
+
         ask_btn = gr.Button("Search Best Document")
         search_output = gr.Markdown()
         ask_btn.click(ask_question, inputs=[question_box], outputs=[search_output])
+    
+        ollama_btn = gr.Button("Ask LLM (Ollama)")
+        ollama_output = gr.Markdown()
+        ollama_btn.click(ask_ollama, inputs=[question_box], outputs=[ollama_output])        
 
 demo.launch()
