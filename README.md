@@ -52,7 +52,7 @@ cd semanticsearch
 conda create --name semanticsearch
 conda activate semanticsearch 
 conda install pip
-pip install -r
+pip install -r requirements.txt
 ```
 
 ### 3. Running the app
