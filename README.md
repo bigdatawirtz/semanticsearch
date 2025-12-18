@@ -34,7 +34,7 @@ Workflow:
 
 ## 📋 Prerequisites
 
-- Python 3.8 or higher
+- Python 3.11
 - pip
 - Ollama servide (running on `http://localhost:11434`) (default model: llama3.3)
 
@@ -49,7 +49,7 @@ cd semanticsearch
 ### 2. Create Virtual Environment
 
 ```
-conda create --name semanticsearch
+conda create --name semanticsearch python=3.11
 conda activate semanticsearch 
 conda install pip
 pip install -r requirements.txt
