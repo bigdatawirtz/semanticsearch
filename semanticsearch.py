@@ -74,11 +74,14 @@ def upload_text(files):
 
     msg_parts = []
     if added:
-        msg_parts.append(f"Uploaded {len(added)} file(s): {added}")
+        msg_parts.append(f"✅ Successfully uploaded {len(added)} file(s):")
+        msg_parts.extend([f"  • {item}" for item in added])
+        msg_parts.append(f"\n📊 Total documents in memory: {collection.count()}")
     if errors:
-        msg_parts.append("Errors:\n" + "\n".join(errors))
+        msg_parts.append(f"\n❌ Errors ({len(errors)} file(s) failed):")
+        msg_parts.extend([f"  • {error}" for error in errors])
 
-    return "\n".join(msg_parts)
+    return "\n".join(msg_parts) if msg_parts else "No files processed."
 
 
 
