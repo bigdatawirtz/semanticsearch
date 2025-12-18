@@ -51,3 +51,21 @@ python semanticsearch.py
 ```
 
 The application will start and provide a local URL (typically `http://localhost:7860`).
+
+## 🐳 Docker Support
+You can also run the app in a container.
+
+### 1. Build the Docker Image
+
+```bash
+docker build -t semanticsearch .
+```
+
+### 2. Run the container
+
+```bash
+docker run -p 7860:7860 semanticsearch
+```
+
+### 3. Access the App
+Open your browser and navigate to `http://localhost:7860`
