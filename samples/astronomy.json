@@ -1,0 +1,24 @@
+{
+  "topic": "Astronomy",
+  "objects": [
+    {
+      "name": "Sun",
+      "type": "Star",
+      "distance_from_earth_km": 149600000,
+      "description": "The star at the center of our solar system that provides light and heat."
+    },
+    {
+      "name": "Moon",
+      "type": "Natural Satellite",
+      "distance_from_earth_km": 384400,
+      "description": "Earth's only natural satellite, responsible for tides."
+    },
+    {
+      "name": "Andromeda Galaxy",
+      "type": "Galaxy",
+      "distance_from_earth_lightyears": 2500000,
+      "description": "The nearest major galaxy to the Milky Way."
+    }
+  ],
+  "fun_fact": "Space is completely silent because sound cannot travel in a vacuum."
+}

@@ -1,0 +1,19 @@
+{
+  "artists": [
+    {
+      "sex": "Male",
+      "instrument": "Guitar",
+      "name": "John Lennon"
+    },
+    {
+      "sex": "Female",
+      "instrument": "Piano",
+      "name": "Stevie Nicks"
+    },
+    {
+      "sex": "Male",
+      "instrument": "Drums",
+      "name": "Keith Moon"
+    }
+  ]
+}

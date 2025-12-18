@@ -1,0 +1,78 @@
+{
+  "recipe": {
+    "name": "Chocolate Cake",
+    "ingredients": [
+      {"name": "All-purpose flour", "quantity": "2 cups"},
+      {"name": "Granulated sugar", "quantity": "1 cup"},
+      {"name": "Unsalted butter, at room temperature", "quantity": "1/2 cup"},
+      {"name": "Large eggs", "quantity": "3"},
+      {"name": "Pure vanilla extract", "quantity": "1 teaspoon"},
+      {"name": "Cocoa powder", "quantity": "1/4 cup"}
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Preheat oven to 350°F (180°C). Grease two 9-inch round cake pans."
+      },
+      {
+        "stepNumber": 2,
+        "description": "In a medium bowl, whisk together flour, baking powder, and salt. Set aside."
+      },
+      {
+        "stepNumber": 3,
+        "description": "In a large mixing bowl, use an electric mixer to beat the butter until creamy.",
+        "subStep1": {
+          "description": "Add sugar to the mixing bowl and continue beating until light and fluffy, about 2 minutes."
+        },
+        "subStep2": {
+          "description": "Beat in eggs one at a time, allowing each egg to fully incorporate before adding the next."
+        }
+      },
+      {
+        "stepNumber": 4,
+        "description": "In a separate bowl, whisk together cocoa powder and milk. Add vanilla extract and whisk until smooth."
+      },
+      {
+        "stepNumber": 5,
+        "description": "Add dry ingredients to the mixing bowl in three parts, alternating with wet ingredients, beginning and ending with dry ingredients.",
+        "subStep1": {
+          "description": "Beat just until combined."
+        }
+      },
+      {
+        "stepNumber": 6,
+        "description": "Divide batter evenly between prepared pans and smooth tops."
+      },
+      {
+        "stepNumber": 7,
+        "description": "Bake for 30-35 minutes, or until a toothpick inserted in the center comes out clean.",
+        "subStep1": {
+          "description": "Remove from oven and let cool in pans for 10 minutes before transferring to wire racks."
+        }
+      },
+      {
+        "stepNumber": 8,
+        "description": "Let cool completely on wire racks before serving."
+      }
+    ],
+    "time": {
+      "totalTime": "1 hour 30 minutes",
+      "prepTime": "30 minutes",
+      "cookTime": "45-50 minutes"
+    }
+  },
+  "nutritionInfo": {
+    "servingSize": "8 slices",
+    "servingsPerRecipe": "12",
+    "caloriesPerServing": "240",
+    "totalFat": "10g",
+    "saturatedFat": "5g",
+    "transFat": "0g",
+    "cholesterol": "20mg",
+    "sodium": "200mg",
+    "carbohydrates": "35g",
+    "dietaryFiber": "2g",
+    "sugars": "18g",
+    "protein": "4g"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "bloodwork": {
+    "test": [
+      {
+        "name": "Hemoglobin",
+        "value": 13.5,
+        "unit": "g/dL"
+      },
+      {
+        "name": "White Blood Cell Count",
+        "value": 7200,
+        "unit": "cells 00bmal"
+      },
+      {
+        "name": "Platelet Count",
+        "value": 250000,
+        "unit": "cells 00bmal"
+      }
+    ]
+  }
+}
